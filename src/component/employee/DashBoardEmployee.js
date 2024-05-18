@@ -72,7 +72,7 @@ const DashBoardEmployee = ({ children }) => {
     setOpenInfo(false);
   };
 
-  const socket = new SockJS("http://localhost:8080/ws");
+  const socket = new SockJS("http://192.168.1.9:8001/ws");
   const stompClient = Stomp.over(socket);
 
   const data = useAppSelector(GetNotification);
