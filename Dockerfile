@@ -3,14 +3,14 @@ FROM node:16.10.0
 WORKDIR /app/FE
 
 # Copy package.json and package-lock.json first to leverage Docker cache
-COPY source/package.json .
-COPY source/package-lock.json .
+COPY ./package.json .
+COPY ./package-lock.json .
 
 # Install dependencies
 RUN npm install
 
 # Copy the rest of the project files
-COPY source/ .
+COPY ./ .
 
 # Build the React application
 RUN npm run build
